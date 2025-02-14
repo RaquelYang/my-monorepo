@@ -11,6 +11,7 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/count-board",
+        "baseHref": "/count-board/",
         "index": "count-board/src/index.html",
         "browser": "count-board/src/main.ts",
         "polyfills": ["zone.js"],
