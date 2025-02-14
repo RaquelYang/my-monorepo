@@ -10,7 +10,7 @@
       "executor": "@angular-devkit/build-angular:application",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/count-board",
+        "outputPath": "dist/apps/count-board",
         "index": "count-board/src/index.html",
         "browser": "count-board/src/main.ts",
         "polyfills": ["zone.js"],
