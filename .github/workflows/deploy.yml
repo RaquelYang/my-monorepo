@@ -1,0 +1,33 @@
+name: Deploy Angular apps to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # 或你想要觸發部署的分支
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build all Angular apps
+        run: |
+          npx nx build count-board --configuration=production
+        # npx nx build another-angular-app --configuration=production  如果有多個 Angular apps
+
+      - name: Deploy count-board to GitHub Pages
+        run: npx angular-cli-ghpages --dir=dist/apps/count-board --branch=gh-pages
+
+      # - name: Deploy another-angular-app to GitHub Pages
+      #   run: npx angular-cli-ghpages --dir=dist/apps/another-angular-app --branch=gh-pages
