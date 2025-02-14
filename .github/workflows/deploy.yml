@@ -22,7 +22,7 @@ jobs:
         run: npm install
 
       - name: Build all Angular apps
-        run: npx nx build count-board --configuration=production
+        run: npx nx build count-board --configuration=production --base-href=/count-board/
         # npx nx build another-angular-app --configuration=production  如果有多個 Angular apps
 
       - name: Deploy count-board to GitHub Pages
